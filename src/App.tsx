@@ -10,11 +10,10 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
-import Profile from './pages/Profile';
+import { map, personCircle , apps} from 'ionicons/icons';
+import Map from './pages/Map';
+import Event from './pages/event/Event';
+import Profile from './pages/profile/Profile';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -45,28 +44,25 @@ const App: React.FC = () => (
           <Route exact path="/profile">
             <Profile />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route exact path="/map">
+            <Map />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/tab1" />
+          <Route path="/event">
+            <Event />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab="map" href="/map">
+            <IonIcon icon={map} />
+            <IonLabel>Карта</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+          <IonTabButton tab="event" href="/event">
+            <IonIcon icon={apps} />
+            <IonLabel>События</IonLabel>
           </IonTabButton>
           <IonTabButton tab="profile" href="/profile">
-            <IonIcon icon={triangle} />
-            <IonLabel>Profile</IonLabel>
+            <IonIcon icon={personCircle} />
+            <IonLabel>Профиль</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
